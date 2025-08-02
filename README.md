@@ -60,4 +60,31 @@ A simple and interactive Task Management Web App that helps users manage their d
 │   └── completed-tasks.png
 ```
 
+---
+
+## 🔮 Future Prospects
+
+- 🔄 **Drag and Drop Task Reordering**
+  - Allow users to reorder tasks visually using drag-and-drop interactions.
+
+- 🌓 **Dark Mode / Theme Toggle**
+  - Add light/dark themes for better user experience.
+
+- 🔔 **Reminders & Notifications**
+  - Set reminders for tasks with browser or system notifications.
+
+- 📱 **Mobile Responsiveness**
+  - Make the layout more optimized and interactive for mobile devices.
+
+- 👤 **User Authentication**
+  - Add login/signup functionality to allow multiple users to manage their own tasks.
+
+- ☁️ **Cloud Storage / Backend Integration**
+  - Use Firebase or a backend like Node.js with MongoDB to store tasks online.
+
+- 📊 **Task Analytics**
+  - Show charts or stats like completed task ratio, overdue tasks, etc.
+
+- 📎 **Attachments**
+  - Allow users to upload files or images with their tasks.
 
