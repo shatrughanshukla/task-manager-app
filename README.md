@@ -31,11 +31,18 @@ A simple and interactive Task Management Web App that helps users manage their d
 
 ---
 
+
 ## 📸 Screenshots
 
-- `./screenshots/task-form.png`
-- `./screenshots/pending-tasks.png`
-- `./screenshots/completed-tasks.png`
+### 🆕 Task Form
+![Task Form](./screenshots/task-form.png)
+
+### 📋 Pending Tasks
+![Pending Tasks](./screenshots/pending-tasks.png)
+
+### ✅ Completed Tasks
+![Completed Tasks](./screenshots/completed-tasks.png)
+
 
 ---
 
