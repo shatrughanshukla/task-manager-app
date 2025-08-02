@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="taskmanager.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task Management App</h1>
+        <form id="task-form">
+            <input type="text" id="title" placeholder="Enter Task" required>
+            <textarea id="description" placeholder="Description"></textarea>
+            <input type="date" id="due-date" required>
+            <select id="priority" required>
+                <option value="">Priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div class="filters">
+            <select id="filter-priority">
+                <option value="all">All Priorities</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select id="filter-status">
+                <option value="all">All Statuses</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button id="filter-due-soon">Due in 7 Days</button>
+        </div>
+
+        <h2>Pending Tasks</h2>
+        <div id="pending-tasks" class="task-list"></div>
+
+        <h2>Completed Tasks</h2>
+        <div id="completed-tasks" class="task-list completed"></div>
+    </div>
+    <script src="taskmanager.js"></script>
+</body>
+
+</html>
