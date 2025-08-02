@@ -48,13 +48,16 @@ A simple and interactive Task Management Web App that helps users manage their d
 
 ## 📂 Project Structure
 
+```
 📁 task-manager-app/
-├── index.html ← Main HTML file (entry point)
-├── style.css ← Styling for your app
-├── script.js ← All JavaScript logic
-├── README.md ← This documentation file
-├── 📁 screenshots/ ← Folder containing images used in README
-│ ├── task-form.png
-│ ├── pending-tasks.png
-│ └── completed-tasks.png
+├── index.html                  ← Main HTML file (entry point)
+├── style.css                   ← Styling for your app
+├── script.js                   ← All JavaScript logic
+├── README.md                   ← This documentation file
+├── 📁 screenshots/             ← Folder containing images used in README
+│   ├── task-form.png
+│   ├── pending-tasks.png
+│   └── completed-tasks.png
+```
+
 
