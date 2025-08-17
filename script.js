@@ -18,7 +18,6 @@ function loadTasks() {
   tasks = saved ? JSON.parse(saved) : [];
 }
 
-
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
