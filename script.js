@@ -1,4 +1,3 @@
-// Selectors
 const taskForm = document.getElementById("task-form");
 const titleInput = document.getElementById("title");
 const descInput = document.getElementById("description");
@@ -10,29 +9,29 @@ const filterPriority = document.getElementById("filter-priority");
 const filterStatus = document.getElementById("filter-status");
 const filterDueSoon = document.getElementById("filter-due-soon");
 
-// State
+
 let tasks = [];
 let editTaskId = null;
 
-// Load tasks from localStorage
+
 function loadTasks() {
   const saved = localStorage.getItem("tasks");
   tasks = saved ? JSON.parse(saved) : [];
 }
 
-// Save tasks to localStorage
+
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Generate unique ID
+
 function generateId() {
   return "_" + Math.random().toString(36).substr(2, 9);
 }
 
-// Render tasks
+
 function renderTasks() {
-  // Get filter values
+
   const priority = filterPriority.value;
   const status = filterStatus.value;
   const dueSoon = filterDueSoon.classList.contains("active");
@@ -40,7 +39,7 @@ function renderTasks() {
   const soon = new Date();
   soon.setDate(now.getDate() + 7);
 
-  // Filter tasks
+
   let filtered = tasks.filter((task) => {
     let match = true;
     if (priority !== "all" && task.priority !== priority) match = false;
@@ -52,24 +51,24 @@ function renderTasks() {
     return match;
   });
 
-  // Separate pending and completed
+
   const pending = filtered.filter((t) => t.status === "pending");
   const completed = filtered.filter((t) => t.status === "completed");
 
-  // Render pending
+
   pendingTasksDiv.innerHTML = "";
   pending.forEach((task) => {
     pendingTasksDiv.appendChild(createTaskCard(task));
   });
 
-  // Render completed
+
   completedTasksDiv.innerHTML = "";
   completed.forEach((task) => {
     completedTasksDiv.appendChild(createTaskCard(task, true));
   });
 }
 
-// Create task card element
+
 function createTaskCard(task, isCompleted = false) {
   const card = document.createElement("div");
   card.className = `task-card ${task.priority} ${
@@ -118,7 +117,7 @@ function createTaskCard(task, isCompleted = false) {
   return card;
 }
 
-// Add or update task
+
 function handleFormSubmit(e) {
   e.preventDefault();
   const title = titleInput.value.trim();
@@ -126,9 +125,7 @@ function handleFormSubmit(e) {
   const dueDate = dueDateInput.value;
   const priority = priorityInput.value;
   if (!title || !description || !dueDate || !priority) return;
-
   if (editTaskId) {
-    // Update existing
     const idx = tasks.findIndex((t) => t.id === editTaskId);
     if (idx !== -1) {
       tasks[idx] = { ...tasks[idx], title, description, dueDate, priority };
@@ -136,7 +133,6 @@ function handleFormSubmit(e) {
     editTaskId = null;
     taskForm.querySelector('button[type="submit"]').textContent = "Add Task";
   } else {
-    // Add new
     tasks.push({
       id: generateId(),
       title,
@@ -153,7 +149,7 @@ function handleFormSubmit(e) {
 
 taskForm.addEventListener("submit", handleFormSubmit);
 
-// Edit task
+
 function startEditTask(id) {
   const task = tasks.find((t) => t.id === id);
   if (!task) return;
@@ -165,14 +161,14 @@ function startEditTask(id) {
   taskForm.querySelector('button[type="submit"]').textContent = "Update Task";
 }
 
-// Delete task
+
 function deleteTask(id) {
   tasks = tasks.filter((t) => t.id !== id);
   saveTasks();
   renderTasks();
 }
 
-// Mark as completed
+
 function completeTask(id) {
   const idx = tasks.findIndex((t) => t.id === id);
   if (idx !== -1) {
@@ -182,7 +178,7 @@ function completeTask(id) {
   renderTasks();
 }
 
-// Filter handlers
+
 filterPriority.addEventListener("change", renderTasks);
 filterStatus.addEventListener("change", renderTasks);
 filterDueSoon.addEventListener("click", function () {
@@ -190,6 +186,6 @@ filterDueSoon.addEventListener("click", function () {
   renderTasks();
 });
 
-// Initial load
+
 loadTasks();
 renderTasks();
