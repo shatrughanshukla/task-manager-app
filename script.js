@@ -110,7 +110,7 @@ function createTaskCard(task, isCompleted = false) {
 
 
 function handleFormSubmit(e) {
-  e.preventDefauldt();
+  e.preventDefault();
   const title = titleInput.value.trim();
   const description = descInput.value.trim();
   const dueDate = dueDateInput.value;
